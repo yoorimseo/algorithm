@@ -1,6 +1,7 @@
 function solution(my_string) {
     if(my_string.includes(" ")) {
-        let res = my_string.split(" ").map(str => str.replace(/(a|e|i|o|u)/g, ""));
+        let res = my_string.split(" ").map(str => str.replace(/[aeiou]/g, ""));
+
         return res.join(" ");
 
     } else {
