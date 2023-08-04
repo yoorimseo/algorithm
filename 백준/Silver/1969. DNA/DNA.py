@@ -3,10 +3,10 @@ dna_list = [input().strip() for _ in range(n)]
 res_cnt = 0
 res_str = ''
 
-for i in range(0, m):
+for i in range(m):
     arr = [0, 0, 0, 0] # A C G T 순
 
-    for j in range(0, n):
+    for j in range(n):
         if dna_list[j][i] == 'A':
             arr[0] += 1
         elif dna_list[j][i] == 'C':
