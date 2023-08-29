@@ -1,0 +1,1 @@
+print(f'138\nyoorimseo')
