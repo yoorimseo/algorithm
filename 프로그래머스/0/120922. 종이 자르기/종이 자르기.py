@@ -1,5 +1,2 @@
-def solution(M, N):    
-    if M == N == 0:
-        return 0
-    
+def solution(M, N):
     return M * N - 1
