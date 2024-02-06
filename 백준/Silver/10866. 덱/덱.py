@@ -19,7 +19,7 @@ for i in range(n):
             print("-1")
     elif command[0] == "pop_back":
         if d:
-            print(d[len(d) - 1])    
+            print(d[-1])    
             d.pop()
         else:
             print("-1")
@@ -37,6 +37,6 @@ for i in range(n):
             print("-1")
     elif command[0] == "back":
         if d:
-            print(d[len(d) - 1])
+            print(d[-1])
         else:
             print("-1")
