@@ -1,29 +1,33 @@
-M, N = map(int, input().split())
-arr = [list(map(int, input().split())) for _ in range(M)]
-dp = [[-1] * N for _ in range(M)]
+import sys
+input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
 
-dy = (-1, 1, 0, 0)
-dx = (0, 0, -1, 1)
+n, m = map(int, input().split())
+graph = []
 
-def solve(y, x):
-    if y == M-1 and x == N-1:
+moves = [[1, 0], [0, 1], [-1, 0], [0, -1]]
+visited = [[-1] * m for _ in range(n)]
+
+for _ in range(n):
+    graph.append(list(map(int, input().split())))
+
+
+def dfs(x, y):
+    if x == n - 1 and y == m - 1:
         return 1
 
-    if dp[y][x] != -1:
-        return dp[y][x]
+    if visited[x][y] != -1:
+        return visited[x][y]
 
-    dp[y][x] = 0
-    
-    for i in range(4):
-        ny = y + dy[i]
-        nx = x + dx[i]
+    visited[x][y] = 0
 
-        if not (0 <= ny < M and 0 <= nx < N):
-            continue
+    for move in moves:
+        nx, ny = x + move[0], y + move[1]
 
-        if arr[ny][nx] < arr[y][x]:
-            dp[y][x] += solve(ny, nx)
-            
-    return dp[y][x]
+        if 0 <= nx < n and 0 <= ny < m:
+            if graph[x][y] > graph[nx][ny]:
+                visited[x][y] += dfs(nx, ny)
 
-print(solve(0, 0))
+    return visited[x][y]
+
+print(dfs(0, 0))
