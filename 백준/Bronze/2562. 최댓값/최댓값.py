@@ -1,9 +1,3 @@
-import sys
+arr = [int(input()) for _ in range(9)]
 
-lines = sys.stdin.readlines()
-arr = []
-
-for line in lines:
-  arr.append(int(line))
-
-print(max(arr), arr.index(max(arr)) + 1, sep='\n')
+print(max(arr), arr.index(max(arr))+1, sep='\n')
