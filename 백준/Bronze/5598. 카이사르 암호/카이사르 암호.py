@@ -1,12 +1,8 @@
-from string import ascii_uppercase
-
-alphabet = list(ascii_uppercase)
-str = input()
-arr = list(str)
+word = input()
 res = ''
 
-for s in arr:
-    index = alphabet.index(s) - 3
-    res += alphabet[index]
+for i in word:
+    temp = (ord(i) - ord('A') - 3) % 26 + ord('A')
+    res += chr(temp)
 
 print(res)
