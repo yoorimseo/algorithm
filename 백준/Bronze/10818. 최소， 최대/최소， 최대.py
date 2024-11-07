@@ -1,6 +1,4 @@
-import sys
-
-num = int(sys.stdin.readline().strip())
-arr = list(map(int, sys.stdin.readline().strip().split()))
+N = int(input())
+arr = list(map(int, input().split()))
 
 print(min(arr), max(arr))
