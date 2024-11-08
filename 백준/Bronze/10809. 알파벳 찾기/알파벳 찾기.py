@@ -1,12 +1,7 @@
-import sys
+S = input()
 
-str = sys.stdin.readline().strip()
-res = []
-
-for code in range(97, 123):
-  if chr(code) in str:
-    res.append(str.index(chr(code)))
-  else:
-    res.append(-1)
-    
-print(*res)
+for i in range(97, 123):
+    if chr(i) in S:
+        print(S.index(chr(i)), end=' ')
+    else:
+        print(-1, end=' ')
