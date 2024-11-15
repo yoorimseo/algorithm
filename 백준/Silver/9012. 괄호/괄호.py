@@ -1,21 +1,16 @@
-N = int(input())
+T = int(input())
 
-for _ in range(N):
-    arr = list(input())
-    new = []
+for _ in range(T):
+    stack = []
+    inp = list(input())
 
-    for i in range(len(arr)):
-        if i == 0:
-            new.append(arr[i])
+    for i in inp:
+        if i == '(':
+            stack.append(i)
         else:
-            if len(new) == 0:
-                new.append(arr[i])
-            elif arr[i] == ')' and new[-1] == '(':
-                new.pop()
+            if stack and stack[-1] == '(':
+                stack.pop()
             else:
-                new.append(arr[i])
+                stack.append(i)
 
-    if len(new) == 0:
-        print('YES')
-    else:
-        print('NO')
+    print('NO') if stack else print('YES')
