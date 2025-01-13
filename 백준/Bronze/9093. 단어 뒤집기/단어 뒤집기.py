@@ -1,10 +1,7 @@
-T = int(input())
+N = int(input())
 
-for _ in range(T):
-    arr = input().split()
-    res = []
+for _ in range(N):
+    words = input().split()
+    res = [ i[::-1] for i in words ]
 
-    for i in arr:
-        res.append(i[::-1])
-
-    print(*res)
+    print(' '.join(res))
