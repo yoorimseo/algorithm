@@ -3,14 +3,20 @@ stack = []
 
 for _ in range(N):
     inp = input().split()
+    o = inp[0]
 
-    if inp[0] == 'push':
-        stack.append(inp[1])
-    elif inp[0] == 'top':
-        print(stack[-1]) if stack else print(-1)
-    elif inp[0] == 'empty':
-        print(0) if stack else print(1)
-    elif inp[0] == 'size':
-        print(len(stack))
-    elif inp[0] == 'pop':
-        print(stack.pop()) if stack else print(-1)
+    if len(inp) > 1:
+        if o == 'push':
+            stack.append(int(inp[1]))
+    else:
+        if  o == 'pop':
+            if stack: print(stack.pop())
+            else: print(-1)
+        elif o == 'size':
+            print(len(stack))
+        elif o == 'empty':
+            if stack: print(0)
+            else: print(1)
+        elif o == 'top':
+            if stack: print(stack[-1])
+            else: print(-1)
