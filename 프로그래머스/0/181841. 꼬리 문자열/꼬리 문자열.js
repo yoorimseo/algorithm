@@ -1,11 +1,4 @@
 function solution(str_list, ex) {
-    let answer = ''
-    
-    for (s of str_list) {
-        if (!s.includes(ex)) {
-            answer += s
-        }
-    }
-    
-    return answer
+    const answer = str_list.filter(i => !(i.includes(ex)))
+    return answer.join('')
 }
