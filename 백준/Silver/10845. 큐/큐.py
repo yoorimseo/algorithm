@@ -1,20 +1,31 @@
-from collections import deque
-
 N = int(input())
-arr = deque()
+queue = []
 
 for _ in range(N):
     inp = input().split()
+    o = inp[0]
 
-    if inp[0] == 'push':
-        arr.append(int(inp[1]))
-    elif inp[0] == 'pop':
-        print(arr.popleft()) if arr else print(-1)
-    elif inp[0] == 'size':
-        print(len(arr))
-    elif inp[0] == 'empty':
-        print(0) if arr else print(1)
-    elif inp[0] == 'front':
-        print(arr[0]) if arr else print(-1)
-    elif inp[0] == 'back':
-        print(arr[-1]) if arr else print(-1)
+    if o == 'push':
+        queue.append(int(inp[1]))
+    elif o == 'pop':
+        if queue:
+            print(queue.pop(0))
+        else:
+            print(-1)
+    elif o == 'size':
+        print(len(queue))
+    elif o == 'empty':
+        if queue:
+            print(0)
+        else:
+            print(1)
+    elif o == 'front':
+        if queue:
+            print(queue[0])
+        else:
+            print(-1)
+    elif o == 'back':
+        if queue:
+            print(queue[-1])
+        else:
+            print(-1)
