@@ -1,22 +1,22 @@
 N = int(input())
-postfix = list(input())
-num = [int(input()) for _ in range(N)]
+line = input()
+nums = [int(input()) for _ in range(N)]
 stack = []
 
-for i in postfix:
+for i in line:
     if 'A' <= i <= 'Z':
-        stack.append(num[ord(i) - 65])
+        stack.append(nums[ord(i) - 65])
     else:
-        b = stack.pop()
-        a = stack.pop()
+        y = stack.pop()
+        x = stack.pop()
 
         if i == '+':
-            stack.append(a + b)
+            stack.append(x + y)
         elif i == '-':
-            stack.append(a - b)
+            stack.append(x - y)
         elif i == '*':
-            stack.append(a * b)
+            stack.append(x * y)
         elif i == '/':
-            stack.append(a / b)
+            stack.append(x / y)
 
 print(f'{stack[0]:.2f}')
