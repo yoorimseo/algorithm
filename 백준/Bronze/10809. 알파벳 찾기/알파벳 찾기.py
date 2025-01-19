@@ -1,7 +1,8 @@
-S = input()
+line = input()
+res = [-1] * 26
 
-for i in range(97, 123):
-    if chr(i) in S:
-        print(S.index(chr(i)), end=' ')
-    else:
-        print(-1, end=' ')
+for i in range(26):
+    if chr(i + 97) in line:
+        res[i] = line.index(chr(i + 97))
+
+print(*res)
