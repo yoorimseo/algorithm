@@ -1,11 +1,13 @@
 def solution(s):
-    zero, cnt = 0, 0
-    
+    zero = 0
+    cnt = 0
+
     while s != '1':
         zero += s.count('0')
-        s = ''.join(list(filter(lambda x: x == '1', s)))
-        length = len(s)
-        s = str(format(int(length), 'b'))
-        cnt += 1
 
+        c = s.replace('0', '')
+        s = str(format(len(c), 'b'))
+
+        cnt += 1
+    
     return [cnt, zero]
