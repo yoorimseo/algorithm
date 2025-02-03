@@ -1,8 +1,7 @@
 def solution(n):
-    f0 = 0
-    f1 = 1
+    a, b = 0, 1
     
-    for _ in range(n):
-        f0, f1 = f1, f0 + f1
+    for i in range(n):
+        a, b = b, a + b
     
-    return f0 % 1234567
+    return a % 1234567
