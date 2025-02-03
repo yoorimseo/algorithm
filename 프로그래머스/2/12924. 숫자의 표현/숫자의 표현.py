@@ -1,17 +1,16 @@
 def solution(n):
-    arr = [i for i in range(1, n+1)]
-    res = 0
-    current_sum = 0
-    start = 0
+    answer = 0
     
-    for end in range(n):
-        current_sum += arr[end]
+    for i in range(1, n+1):
+        total = 0
         
-        while current_sum > n and start <= end:
-            current_sum -= arr[start]
-            start += 1
-        
-        if current_sum == n:
-            res += 1
+        for j in range(i, n+1):
+            total += j
+            
+            if total == n:
+                answer += 1
+                break
+            elif total > n:
+                break
     
-    return res
+    return answer
