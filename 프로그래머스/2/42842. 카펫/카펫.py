@@ -1,6 +1,12 @@
 def solution(brown, yellow):
-    for height in range(1, yellow + 1):
-        if yellow % height == 0:
-            width = yellow // height
-            if 2 * (width + height) + 4 == brown:
-                return [width + 2, height + 2]
+    total = brown + yellow
+    
+    for height in range(1, total+1):
+        if total % height == 0:
+            width = total // height
+
+            if width < height:
+                continue
+
+            if (width - 2) * (height - 2) == yellow:
+                return [width, height]
