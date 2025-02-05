@@ -1,5 +1,11 @@
 def solution(n):
-    binary = format(n, 'b')
-    ans = list(filter(lambda s: s == '1', binary))
-
-    return len(ans)
+    answer = 0
+    
+    while n > 0:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n -= 1
+            answer += 1
+    
+    return answer
