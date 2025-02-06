@@ -1,6 +1,6 @@
 # [level 2] N개의 최소공배수 - 12953 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12953) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12953#) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 06월 23일 16:20:14
+2025년 02월 06일 23:59:06
 
 ### 문제 설명
 

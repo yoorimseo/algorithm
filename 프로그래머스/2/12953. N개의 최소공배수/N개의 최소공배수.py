@@ -1,12 +1,12 @@
 import math
 
+def lcm(a, b):
+    return a * b // math.gcd(a, b)
+
 def solution(arr):
-    def lcm(a, b):
-        return a * b // math.gcd(a, b)
-
-    answer = arr[0]
-
+    n = arr[0]
+    
     for i in arr[1:]:
-        answer = lcm(answer, i)
-
-    return answer
+        n = lcm(n, i)
+    
+    return n
