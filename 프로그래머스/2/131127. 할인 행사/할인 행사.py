@@ -1,12 +1,13 @@
 from collections import Counter
-
 def solution(want, number, discount):
     answer = 0
-    product = {w: n for w, n in zip(want, number)}
-    sum_num = sum(number)
+    dic = {}
+    
+    for i in range(len(want)):
+        dic[want[i]] = number[i]
 
-    for i in range(len(discount) - sum_num + 1):
-        if product == Counter(discount[i:i+sum_num]):
+    for i in range(len(discount)-9):
+        if dic == Counter(discount[i:i+10]): 
             answer += 1
-            
+
     return answer
